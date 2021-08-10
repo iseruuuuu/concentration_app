@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ConcentrationScreenStateTearOff {
   const _$ConcentrationScreenStateTearOff();
 
-  _ConcentrationScreenState call({String FaceBookID = ''}) {
+  _ConcentrationScreenState call({String Timer = '00:00:00'}) {
     return _ConcentrationScreenState(
-      FaceBookID: FaceBookID,
+      Timer: Timer,
     );
   }
 }
@@ -28,7 +28,7 @@ const $ConcentrationScreenState = _$ConcentrationScreenStateTearOff();
 
 /// @nodoc
 mixin _$ConcentrationScreenState {
-  String get FaceBookID => throw _privateConstructorUsedError;
+  String get Timer => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ConcentrationScreenStateCopyWith<ConcentrationScreenState> get copyWith =>
@@ -40,7 +40,7 @@ abstract class $ConcentrationScreenStateCopyWith<$Res> {
   factory $ConcentrationScreenStateCopyWith(ConcentrationScreenState value,
           $Res Function(ConcentrationScreenState) then) =
       _$ConcentrationScreenStateCopyWithImpl<$Res>;
-  $Res call({String FaceBookID});
+  $Res call({String Timer});
 }
 
 /// @nodoc
@@ -54,12 +54,12 @@ class _$ConcentrationScreenStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? FaceBookID = freezed,
+    Object? Timer = freezed,
   }) {
     return _then(_value.copyWith(
-      FaceBookID: FaceBookID == freezed
-          ? _value.FaceBookID
-          : FaceBookID // ignore: cast_nullable_to_non_nullable
+      Timer: Timer == freezed
+          ? _value.Timer
+          : Timer // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -72,7 +72,7 @@ abstract class _$ConcentrationScreenStateCopyWith<$Res>
           $Res Function(_ConcentrationScreenState) then) =
       __$ConcentrationScreenStateCopyWithImpl<$Res>;
   @override
-  $Res call({String FaceBookID});
+  $Res call({String Timer});
 }
 
 /// @nodoc
@@ -89,12 +89,12 @@ class __$ConcentrationScreenStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? FaceBookID = freezed,
+    Object? Timer = freezed,
   }) {
     return _then(_ConcentrationScreenState(
-      FaceBookID: FaceBookID == freezed
-          ? _value.FaceBookID
-          : FaceBookID // ignore: cast_nullable_to_non_nullable
+      Timer: Timer == freezed
+          ? _value.Timer
+          : Timer // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -103,29 +103,28 @@ class __$ConcentrationScreenStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ConcentrationScreenState implements _ConcentrationScreenState {
-  const _$_ConcentrationScreenState({this.FaceBookID = ''});
+  const _$_ConcentrationScreenState({this.Timer = '00:00:00'});
 
-  @JsonKey(defaultValue: '')
+  @JsonKey(defaultValue: '00:00:00')
   @override
-  final String FaceBookID;
+  final String Timer;
 
   @override
   String toString() {
-    return 'ConcentrationScreenState(FaceBookID: $FaceBookID)';
+    return 'ConcentrationScreenState(Timer: $Timer)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ConcentrationScreenState &&
-            (identical(other.FaceBookID, FaceBookID) ||
-                const DeepCollectionEquality()
-                    .equals(other.FaceBookID, FaceBookID)));
+            (identical(other.Timer, Timer) ||
+                const DeepCollectionEquality().equals(other.Timer, Timer)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(FaceBookID);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(Timer);
 
   @JsonKey(ignore: true)
   @override
@@ -135,11 +134,11 @@ class _$_ConcentrationScreenState implements _ConcentrationScreenState {
 }
 
 abstract class _ConcentrationScreenState implements ConcentrationScreenState {
-  const factory _ConcentrationScreenState({String FaceBookID}) =
+  const factory _ConcentrationScreenState({String Timer}) =
       _$_ConcentrationScreenState;
 
   @override
-  String get FaceBookID => throw _privateConstructorUsedError;
+  String get Timer => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ConcentrationScreenStateCopyWith<_ConcentrationScreenState> get copyWith =>

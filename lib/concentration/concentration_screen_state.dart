@@ -1,4 +1,5 @@
-import 'package:concentration_app/concentration/concentration_screen.dart';
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -9,7 +10,7 @@ part 'concentration_screen_state.freezed.dart';
 @freezed
 abstract class ConcentrationScreenState with _$ConcentrationScreenState {
   const factory ConcentrationScreenState({
-    @Default('') String FaceBookID,
+    @Default('00:00:00') String Timer,
   }) = _ConcentrationScreenState;
 }
 
@@ -20,13 +21,55 @@ class ConcentrationScreenController extends StateNotifier<ConcentrationScreenSta
 
   final BuildContext context;
 
-  void onTap() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const ConcentrationScreen(),
-        fullscreenDialog: true,
-      ),
+  bool isStopPressed = true;
+  bool isResetPressed = true;
+  bool isStartPressed = true;
+  bool isStopPressed2 = true;
+  bool isResetPressed2 = true;
+  bool isStartPressed2 = true;
+  final dul = const Duration(microseconds: 1);
+  final dul2 = const Duration(milliseconds: 1);
+  var swatch = Stopwatch();
+  var swatch2 = Stopwatch();
+  String player = '00:00:00';
+  String player2 = '00:00:00';
+
+  startTimer(){
+    Timer(dul,keepRunning);
+  }
+
+  keepRunning(){
+    if(swatch.isRunning){
+      startTimer();
+    }
+    player = swatch.elapsed.inSeconds.toString().padLeft(2,"0") +':'
+        + (swatch.elapsed.inMilliseconds % 100).toString().padLeft(2,"0") +':'
+        + (swatch.elapsed.inMicroseconds % 100).toString().padLeft(2,"0") ;
+    state = state.copyWith(
+      Timer: player,
     );
   }
+
+  void onTapStart1() {
+    isStopPressed = false;
+    isStartPressed = true;
+    swatch.start();
+    startTimer();
+  }
+
+  void onTapStop1() {
+    isStopPressed = true;
+    isResetPressed = false;
+    swatch.stop();
+  }
+
+  void onTapReset1() {
+    isResetPressed = true;
+    isStartPressed = true;
+    swatch.reset();
+    state = state.copyWith(
+      Timer: '00:00:00',
+    );
+  }
+
 }

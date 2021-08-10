@@ -1,37 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
+import 'concentration_screen_state.dart';
 
 class ConcentrationScreen extends StatelessWidget {
   const ConcentrationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            const Text(
-              '00:00:00',
-              style: TextStyle(
-                color: Colors.indigo,
-                fontSize: 40,
-              ),
+    return StateNotifierProvider<ConcentrationScreenController, ConcentrationScreenState>(
+      create: (context) => ConcentrationScreenController(context: context),
+      builder: (context, _) {
+        final Timer = context.select<ConcentrationScreenState, String>((state) => state.Timer);
+        return Scaffold(
+          backgroundColor: Colors.white,
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                Text(
+                  Timer,
+                  style: const TextStyle(
+                    color: Colors.indigo,
+                    fontSize: 40,
+                  ),
+                ),
+
+                GestureDetector(
+                  onTap: () =>context.read<ConcentrationScreenController>().onTapStart1(),
+                  child: SizedBox(
+                    width: 300,
+                    height: 300,
+                    child: Image.asset('assets/1.png'),
+                  ),
+                ),
+              ],
             ),
-
-            GestureDetector(
-              child: SizedBox(
-                width: 300,
-                height: 300,
-                child: Image.asset('assets/1.png'),
-              ),
-            ),
-
-
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
