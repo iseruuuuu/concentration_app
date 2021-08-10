@@ -1,3 +1,4 @@
+import 'package:concentration_app/concentration/concentration_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,7 +25,15 @@ class HomeScreen extends StatelessWidget {
             ),
 
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ConcentrationScreen(),
+                    fullscreenDialog: true,
+                  ),
+                );
+              },
               child: Text('aaaa'),
             ),
           ],
