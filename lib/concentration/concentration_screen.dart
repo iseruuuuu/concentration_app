@@ -12,11 +12,6 @@ class ConcentrationScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-
-            const Text('スタート'),
-
-            const Text('集中なう'),
-
             const Text(
               '00:00:00',
               style: TextStyle(
@@ -25,10 +20,12 @@ class ConcentrationScreen extends StatelessWidget {
               ),
             ),
 
-            Container(
-              width: 30,
-              height: 30,
-              child: Image.asset('assets/1.png'),
+            GestureDetector(
+              child: SizedBox(
+                width: 300,
+                height: 300,
+                child: Image.asset('assets/1.png'),
+              ),
             ),
 
 
