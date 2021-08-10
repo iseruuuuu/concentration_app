@@ -1,3 +1,4 @@
+import 'package:concentration_app/concentration/concentration_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -19,4 +20,13 @@ class HomeScreenController extends StateNotifier<HomeScreenState> with LocatorMi
 
   final BuildContext context;
 
+  void onTap() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const ConcentrationScreen(),
+        fullscreenDialog: true,
+      ),
+    );
+  }
 }

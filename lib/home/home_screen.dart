@@ -1,44 +1,54 @@
-import 'package:concentration_app/concentration/concentration_screen.dart';
+import 'package:flutter_state_notifier/flutter_state_notifier.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'home_screen_state.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-           const Text(
-                'The 集中力',
-              style: TextStyle(
-                color: Colors.indigo,
-                fontSize: 40,
-              ),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: const Text('スタート'),
-            ),
-
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ConcentrationScreen(),
-                    fullscreenDialog: true,
-                  ),
-                );
-              },
-              child: Text('aaaa'),
-            ),
-          ],
-        ),
+    return StateNotifierProvider<HomeScreenController, HomeScreenState>(
+      create: (context) => HomeScreenController(
+        context: context,
       ),
+      builder: (context, _) {
+        final Size size = MediaQuery.of(context).size;
+        return Scaffold(
+          backgroundColor: Colors.white,
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                const Text(
+                  'The 集中力',
+                  style: TextStyle(
+                    color: Colors.indigo,
+                    fontSize: 40,
+                  ),
+                ),
+                Container(
+                  width: size.width / 1.5,
+                  height: size.width / 5,
+                  child: ElevatedButton(
+                    onPressed: () => context.read<HomeScreenController>().onTap(),
+                    child: const Text('スタート'),
+                  ),
+                ),
+
+                Container(
+                  width: size.width / 1.5,
+                  height: size.width / 5,
+                  child: ElevatedButton(
+                    onPressed: () => context.read<HomeScreenController>().onTap(),
+                    child: const Text('スタート'),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
