@@ -50,20 +50,20 @@ class ConcentrationScreenController extends StateNotifier<ConcentrationScreenSta
     );
   }
 
-  void onTapStart1() {
+  void onTapStart() {
     isStopPressed = false;
     isStartPressed = true;
     swatch.start();
     startTimer();
   }
 
-  void onTapStop1() {
+  void onTapStop() {
     isStopPressed = true;
     isResetPressed = false;
     swatch.stop();
   }
 
-  void onTapReset1() {
+  void onTapReset() {
     isResetPressed = true;
     isStartPressed = true;
     swatch.reset();
@@ -71,5 +71,15 @@ class ConcentrationScreenController extends StateNotifier<ConcentrationScreenSta
       Timer: '00:00:00',
     );
   }
+
+  void onTapGameOver() {
+  //   Navigator.push(
+  //     context,
+  //     MaterialPageRoute(
+  //       builder: (context) => const GameOverScreen(),
+  //       fullscreenDialog: true,
+  //     ),
+  //   );
+   }
 
 }

@@ -1,17 +1,18 @@
+import 'package:concentration_app/concentration/concentration_screen_state.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
-import 'concentration_screen_state.dart';
 
-class ConcentrationScreen extends StatelessWidget {
-  const ConcentrationScreen({Key? key}) : super(key: key);
+import 'gameover_screen_state.dart';
+
+class GameOverScreen extends StatelessWidget {
+  const GameOverScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return StateNotifierProvider<ConcentrationScreenController, ConcentrationScreenState>(
-      create: (context) => ConcentrationScreenController(context: context),
+    return StateNotifierProvider<GameOverScreenController, GameOverScreenState>(
+      create: (context) => GameOverScreenController(context: context),
       builder: (context, _) {
-        final Timer = context.select<ConcentrationScreenState, String>((state) => state.Timer);
         return Scaffold(
           backgroundColor: Colors.white,
           body: Center(
@@ -20,16 +21,13 @@ class ConcentrationScreen extends StatelessWidget {
               // ignore: prefer_const_literals_to_create_immutables
               children: [
                 Text(
-                  Timer,
+                 'aaa',
                   style: const TextStyle(
                     color: Colors.indigo,
                     fontSize: 40,
                   ),
                 ),
                 GestureDetector(
-                  onLongPress: () => context.read<ConcentrationScreenController>().onTapStart(),
-                  onLongPressEnd: (a) => context.read<ConcentrationScreenController>().onTapStop(),
-                  onLongPressMoveUpdate: (a) => context.read<ConcentrationScreenController>().onTapStop(),
                   child: SizedBox(
                     width: 300,
                     height: 300,
