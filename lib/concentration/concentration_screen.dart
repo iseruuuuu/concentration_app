@@ -17,7 +17,6 @@ class ConcentrationScreen extends StatelessWidget {
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              // ignore: prefer_const_literals_to_create_immutables
               children: [
                 Text(
                   Timer,
@@ -29,7 +28,7 @@ class ConcentrationScreen extends StatelessWidget {
                 GestureDetector(
                   onLongPress: () => context.read<ConcentrationScreenController>().onTapStart(),
                   onLongPressEnd: (a) => context.read<ConcentrationScreenController>().onTapStop(),
-                  onLongPressMoveUpdate: (a) => context.read<ConcentrationScreenController>().onTapStop(),
+                 // onLongPressMoveUpdate: (a) => context.read<ConcentrationScreenController>().onTapStop(),
                   child: SizedBox(
                     width: 300,
                     height: 300,
