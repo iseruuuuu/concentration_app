@@ -24,4 +24,9 @@ class ResultScreenController extends StateNotifier<ResultScreenState> with Locat
     int count = 0;
     Navigator.popUntil(context, (_) => count++ >= 2);
   }
+
+  void onTapOtherAPP() async {
+      String _url = 'https://apps.apple.com/jp/developer/ryutaro-iseki/id1544199624#see-all/i-phone-apps';
+      await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
+  }
 }
