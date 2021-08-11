@@ -21,6 +21,4 @@ class GameOverScreenController extends StateNotifier<GameOverScreenState> with L
 
   final BuildContext context;
 
-
-
 }
