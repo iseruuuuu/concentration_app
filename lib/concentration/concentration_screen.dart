@@ -27,7 +27,7 @@ class ConcentrationScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onLongPress: () => context.read<ConcentrationScreenController>().onTapStart(),
-                  onLongPressEnd: (a) => context.read<ConcentrationScreenController>().onTapStop(),
+                  onLongPressEnd: (a) => context.read<ConcentrationScreenController>().onTapGameOver(),
                  // onLongPressMoveUpdate: (a) => context.read<ConcentrationScreenController>().onTapStop(),
                   child: SizedBox(
                     width: 300,

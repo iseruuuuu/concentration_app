@@ -21,7 +21,7 @@ class ResultScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const Text(
-                  'The 集中力',
+                  'ゲームオーバー',
                   style: TextStyle(
                     color: Colors.indigo,
                     fontSize: 40,
@@ -31,7 +31,7 @@ class ResultScreen extends StatelessWidget {
                   width: size.width / 1.5,
                   height: size.width / 5,
                   child: ElevatedButton(
-                    onPressed: () => context.read<ResultScreenController>().onTap(),
+                    onPressed: () => context.read<ResultScreenController>().onTapTitle(),
                     child: const Text('スタート'),
                   ),
                 ),
@@ -40,7 +40,7 @@ class ResultScreen extends StatelessWidget {
                   width: size.width / 1.5,
                   height: size.width / 5,
                   child: ElevatedButton(
-                    onPressed: () => context.read<ResultScreenController>().onTap(),
+                    onPressed: () => context.read<ResultScreenController>().onTapTitle(),
                     child: const Text('スタート'),
                   ),
                 ),

@@ -20,13 +20,8 @@ class ResultScreenController extends StateNotifier<ResultScreenState> with Locat
 
   final BuildContext context;
 
-  void onTap() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const ConcentrationScreen(),
-        fullscreenDialog: true,
-      ),
-    );
+  void onTapTitle() {
+    int count = 0;
+    Navigator.popUntil(context, (_) => count++ >= 2);
   }
 }

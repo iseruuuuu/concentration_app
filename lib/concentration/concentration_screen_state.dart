@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:concentration_app/result/result_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -73,13 +74,13 @@ class ConcentrationScreenController extends StateNotifier<ConcentrationScreenSta
   }
 
   void onTapGameOver() {
-  //   Navigator.push(
-  //     context,
-  //     MaterialPageRoute(
-  //       builder: (context) => const GameOverScreen(),
-  //       fullscreenDialog: true,
-  //     ),
-  //   );
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const ResultScreen(),
+        fullscreenDialog: true,
+      ),
+    );
    }
 
 }
