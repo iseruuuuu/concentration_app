@@ -29,6 +29,9 @@ dev_dependencies:
   #tutorial
   flutter_overboard: ^2.0.1
 
+  #url
+  url_launcher:
+
 flutter:
   uses-material-design: true
   assets:
