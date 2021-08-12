@@ -24,7 +24,7 @@ class ResultScreen extends StatelessWidget {
                   'ゲームオーバー',
                   style: TextStyle(
                     color: Colors.indigo,
-                    fontSize: 40,
+                    fontSize: 30,
                   ),
                 ),
                 Container(
