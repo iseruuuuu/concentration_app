@@ -32,16 +32,25 @@ class ResultScreen extends StatelessWidget {
                   height: size.width / 5,
                   child: ElevatedButton(
                     onPressed: () => context.read<ResultScreenController>().onTapTitle(),
-                    child: const Text('スタート'),
+                    child: const Text(
+                      'タイトルへ',
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
                   ),
                 ),
-
                 Container(
                   width: size.width / 1.5,
                   height: size.width / 5,
                   child: ElevatedButton(
                     onPressed: () => context.read<ResultScreenController>().onTapOtherAPP(),
-                    child: const Text('他のアプリを見てみる'),
+                    child: const Text(
+                      '他のアプリを見てみる',
+                      style: TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
                   ),
                 ),
               ],
