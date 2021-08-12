@@ -24,18 +24,9 @@ class HomeScreen extends StatelessWidget {
                   'The 集中力',
                   style: TextStyle(
                     color: Colors.indigo,
-                    fontSize: 40,
+                    fontSize: 45,
                   ),
                 ),
-                Container(
-                  width: size.width / 1.5,
-                  height: size.width / 5,
-                  child: ElevatedButton(
-                    onPressed: () => context.read<HomeScreenController>().onTap(),
-                    child: const Text('スタート'),
-                  ),
-                ),
-
                 Container(
                   width: size.width / 1.5,
                   height: size.width / 5,
