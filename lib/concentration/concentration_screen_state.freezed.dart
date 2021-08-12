@@ -16,9 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ConcentrationScreenStateTearOff {
   const _$ConcentrationScreenStateTearOff();
 
-  _ConcentrationScreenState call({String Timer = '00:00:00'}) {
+  _ConcentrationScreenState call(
+      {String Timer = '00:00:00', String Text = ''}) {
     return _ConcentrationScreenState(
       Timer: Timer,
+      Text: Text,
     );
   }
 }
@@ -29,6 +31,7 @@ const $ConcentrationScreenState = _$ConcentrationScreenStateTearOff();
 /// @nodoc
 mixin _$ConcentrationScreenState {
   String get Timer => throw _privateConstructorUsedError;
+  String get Text => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ConcentrationScreenStateCopyWith<ConcentrationScreenState> get copyWith =>
@@ -40,7 +43,7 @@ abstract class $ConcentrationScreenStateCopyWith<$Res> {
   factory $ConcentrationScreenStateCopyWith(ConcentrationScreenState value,
           $Res Function(ConcentrationScreenState) then) =
       _$ConcentrationScreenStateCopyWithImpl<$Res>;
-  $Res call({String Timer});
+  $Res call({String Timer, String Text});
 }
 
 /// @nodoc
@@ -55,11 +58,16 @@ class _$ConcentrationScreenStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? Timer = freezed,
+    Object? Text = freezed,
   }) {
     return _then(_value.copyWith(
       Timer: Timer == freezed
           ? _value.Timer
           : Timer // ignore: cast_nullable_to_non_nullable
+              as String,
+      Text: Text == freezed
+          ? _value.Text
+          : Text // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -72,7 +80,7 @@ abstract class _$ConcentrationScreenStateCopyWith<$Res>
           $Res Function(_ConcentrationScreenState) then) =
       __$ConcentrationScreenStateCopyWithImpl<$Res>;
   @override
-  $Res call({String Timer});
+  $Res call({String Timer, String Text});
 }
 
 /// @nodoc
@@ -90,11 +98,16 @@ class __$ConcentrationScreenStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? Timer = freezed,
+    Object? Text = freezed,
   }) {
     return _then(_ConcentrationScreenState(
       Timer: Timer == freezed
           ? _value.Timer
           : Timer // ignore: cast_nullable_to_non_nullable
+              as String,
+      Text: Text == freezed
+          ? _value.Text
+          : Text // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -103,15 +116,18 @@ class __$ConcentrationScreenStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ConcentrationScreenState implements _ConcentrationScreenState {
-  const _$_ConcentrationScreenState({this.Timer = '00:00:00'});
+  const _$_ConcentrationScreenState({this.Timer = '00:00:00', this.Text = ''});
 
   @JsonKey(defaultValue: '00:00:00')
   @override
   final String Timer;
+  @JsonKey(defaultValue: '')
+  @override
+  final String Text;
 
   @override
   String toString() {
-    return 'ConcentrationScreenState(Timer: $Timer)';
+    return 'ConcentrationScreenState(Timer: $Timer, Text: $Text)';
   }
 
   @override
@@ -119,12 +135,16 @@ class _$_ConcentrationScreenState implements _ConcentrationScreenState {
     return identical(this, other) ||
         (other is _ConcentrationScreenState &&
             (identical(other.Timer, Timer) ||
-                const DeepCollectionEquality().equals(other.Timer, Timer)));
+                const DeepCollectionEquality().equals(other.Timer, Timer)) &&
+            (identical(other.Text, Text) ||
+                const DeepCollectionEquality().equals(other.Text, Text)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(Timer);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(Timer) ^
+      const DeepCollectionEquality().hash(Text);
 
   @JsonKey(ignore: true)
   @override
@@ -134,11 +154,13 @@ class _$_ConcentrationScreenState implements _ConcentrationScreenState {
 }
 
 abstract class _ConcentrationScreenState implements ConcentrationScreenState {
-  const factory _ConcentrationScreenState({String Timer}) =
+  const factory _ConcentrationScreenState({String Timer, String Text}) =
       _$_ConcentrationScreenState;
 
   @override
   String get Timer => throw _privateConstructorUsedError;
+  @override
+  String get Text => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ConcentrationScreenStateCopyWith<_ConcentrationScreenState> get copyWith =>

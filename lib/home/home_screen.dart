@@ -29,10 +29,15 @@ class HomeScreen extends StatelessWidget {
                 ),
                 Container(
                   width: size.width / 1.5,
-                  height: size.width / 5,
+                  height: size.width / 6,
                   child: ElevatedButton(
                     onPressed: () => context.read<HomeScreenController>().onTap(),
-                    child: const Text('スタート'),
+                    child: const Text(
+                        'スタート',
+                      style: TextStyle(
+                        fontSize: 25,
+                      ),
+                    ),
                   ),
                 ),
               ],

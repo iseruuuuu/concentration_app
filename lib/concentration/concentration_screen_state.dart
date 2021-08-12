@@ -12,6 +12,7 @@ part 'concentration_screen_state.freezed.dart';
 abstract class ConcentrationScreenState with _$ConcentrationScreenState {
   const factory ConcentrationScreenState({
     @Default('00:00:00') String Timer,
+    @Default('') String Text,
   }) = _ConcentrationScreenState;
 }
 
