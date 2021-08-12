@@ -36,8 +36,18 @@ class ConcentrationScreenController extends StateNotifier<ConcentrationScreenSta
   String player = '00:00:00';
   String player2 = '00:00:00';
 
+  @override
+  void initState() {
+    state = state.copyWith(
+      Text: 'マッチ棒を長押してください!'
+    );
+  }
+
   startTimer(){
     Timer(dul,keepRunning);
+    state = state.copyWith(
+      Text: 'スタート!!'
+    );
   }
 
   keepRunning(){

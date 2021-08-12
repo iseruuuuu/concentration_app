@@ -12,6 +12,7 @@ class ConcentrationScreen extends StatelessWidget {
       create: (context) => ConcentrationScreenController(context: context),
       builder: (context, _) {
         final Timer = context.select<ConcentrationScreenState, String>((state) => state.Timer);
+        final text = context.select<ConcentrationScreenState, String>((state) => state.Text);
         return Scaffold(
           backgroundColor: Colors.white,
           body: Center(
@@ -19,7 +20,7 @@ class ConcentrationScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Text('a'),
+                Text(text),
 
                 Text(
                   Timer,
