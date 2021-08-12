@@ -20,7 +20,13 @@ class ConcentrationScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
 
-                Text(text),
+                Text(
+                  text,
+                  style: const TextStyle(
+                    fontSize: 40,
+                    color: Colors.indigo,
+                  ),
+                ),
 
                 Text(
                   Timer,
