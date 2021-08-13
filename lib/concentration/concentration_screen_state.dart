@@ -85,9 +85,6 @@ class ConcentrationScreenController extends StateNotifier<ConcentrationScreenSta
   }
 
   void onTapGameOver() {
-
-
-
     Navigator.push(
       context,
       MaterialPageRoute(
