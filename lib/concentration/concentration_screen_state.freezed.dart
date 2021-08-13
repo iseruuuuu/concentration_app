@@ -17,7 +17,7 @@ class _$ConcentrationScreenStateTearOff {
   const _$ConcentrationScreenStateTearOff();
 
   _ConcentrationScreenState call(
-      {String Timer = '00:00:00', String Text = ''}) {
+      {String Timer = '00:00:00:00', String Text = ''}) {
     return _ConcentrationScreenState(
       Timer: Timer,
       Text: Text,
@@ -116,9 +116,10 @@ class __$ConcentrationScreenStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ConcentrationScreenState implements _ConcentrationScreenState {
-  const _$_ConcentrationScreenState({this.Timer = '00:00:00', this.Text = ''});
+  const _$_ConcentrationScreenState(
+      {this.Timer = '00:00:00:00', this.Text = ''});
 
-  @JsonKey(defaultValue: '00:00:00')
+  @JsonKey(defaultValue: '00:00:00:00')
   @override
   final String Timer;
   @JsonKey(defaultValue: '')

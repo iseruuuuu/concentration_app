@@ -11,7 +11,7 @@ part 'concentration_screen_state.freezed.dart';
 @freezed
 abstract class ConcentrationScreenState with _$ConcentrationScreenState {
   const factory ConcentrationScreenState({
-    @Default('00:00:00') String Timer,
+    @Default('00:00:00:00') String Timer,
     @Default('') String Text,
   }) = _ConcentrationScreenState;
 }
@@ -60,7 +60,8 @@ class ConcentrationScreenController extends StateNotifier<ConcentrationScreenSta
     if(swatch.isRunning){
       startTimer();
     }
-    player = swatch.elapsed.inSeconds.toString().padLeft(2,"0") +':'
+    player = swatch.elapsed.inMinutes.toString().padLeft(2,"0") +':'
+        + swatch.elapsed.inSeconds.toString().padLeft(2,"0") +':'
         + (swatch.elapsed.inMilliseconds % 100).toString().padLeft(2,"0") +':'
         + (swatch.elapsed.inMicroseconds % 100).toString().padLeft(2,"0") ;
     state = state.copyWith(
