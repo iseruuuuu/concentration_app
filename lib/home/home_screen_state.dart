@@ -19,6 +19,16 @@ class HomeScreenController extends StateNotifier<HomeScreenState> with LocatorMi
   }) : super (const HomeScreenState());
 
   final BuildContext context;
+  
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   void onTap() {
     Navigator.push(

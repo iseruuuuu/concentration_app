@@ -43,6 +43,12 @@ class ConcentrationScreenController extends StateNotifier<ConcentrationScreenSta
     );
   }
 
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+
   startTimer(){
     Timer(dul,keepRunning);
     state = state.copyWith(

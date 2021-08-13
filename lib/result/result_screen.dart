@@ -32,10 +32,17 @@ class ResultScreen extends StatelessWidget {
                     fontSize: 30,
                   ),
                 ),
-                Text(time),
+                Text(
+                  '集中した時間\n' + time,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.indigo,
+                    fontSize: 30,
+                  ),
+                ),
                 Container(
                   width: size.width / 1.5,
-                  height: size.width / 5,
+                  height: size.width / 6,
                   child: ElevatedButton(
                     onPressed: () => context.read<ResultScreenController>().onTapTitle(),
                     child: const Text(
@@ -48,7 +55,7 @@ class ResultScreen extends StatelessWidget {
                 ),
                 Container(
                   width: size.width / 1.5,
-                  height: size.width / 5,
+                  height: size.width / 6,
                   child: ElevatedButton(
                     onPressed: () => context.read<ResultScreenController>().onTapOtherAPP(),
                     child: const Text(
