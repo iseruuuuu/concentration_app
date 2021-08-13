@@ -39,14 +39,14 @@ class ConcentrationScreenController extends StateNotifier<ConcentrationScreenSta
   @override
   void initState() {
     state = state.copyWith(
-      Text: 'マッチ棒を長押してください!'
+        Text: 'マッチ棒を長押してください!'
     );
   }
 
   startTimer(){
     Timer(dul,keepRunning);
     state = state.copyWith(
-      Text: 'スタート!!'
+        Text: 'スタート!!'
     );
   }
 
@@ -85,13 +85,16 @@ class ConcentrationScreenController extends StateNotifier<ConcentrationScreenSta
   }
 
   void onTapGameOver() {
+
+
+
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const ResultScreen(),
+        builder: (context) => ResultScreen(time: player),
         fullscreenDialog: true,
       ),
     );
-   }
+  }
 
 }

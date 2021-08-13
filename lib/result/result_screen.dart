@@ -4,7 +4,12 @@ import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({Key? key}) : super(key: key);
+  const ResultScreen({
+    Key? key,
+    required this.time
+  }) : super(key: key);
+
+  final String time;
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +32,7 @@ class ResultScreen extends StatelessWidget {
                     fontSize: 30,
                   ),
                 ),
+                Text(time),
                 Container(
                   width: size.width / 1.5,
                   height: size.width / 5,
