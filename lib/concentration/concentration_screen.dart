@@ -22,7 +22,7 @@ class ConcentrationScreen extends StatelessWidget {
                 Text(
                   text,
                   style: const TextStyle(
-                    fontSize: 40,
+                    fontSize: 20,
                     color: Colors.indigo,
                   ),
                 ),
@@ -30,7 +30,7 @@ class ConcentrationScreen extends StatelessWidget {
                   Timer,
                   style: const TextStyle(
                     color: Colors.indigo,
-                    fontSize: 40,
+                    fontSize: 50,
                   ),
                 ),
                 GestureDetector(
